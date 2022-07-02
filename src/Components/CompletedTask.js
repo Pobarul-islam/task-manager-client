@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 
 const CompletedTask = () => {
+ 
     const [tasks, setTasks] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5000/user')
@@ -39,8 +40,10 @@ const CompletedTask = () => {
                     tasks.map(tasks => <li
                         key={tasks._id}
                     >{tasks.name}
-                        <Link to={`/update/${tasks._id}`}><button className='btn'>Update</button></Link>
-                        <button onClick={()=>handleTaskDelete(tasks._id)} className='btn btn-base'>X</button>
+                        <Link to={`/update/${tasks._id}`}><button className='btn ml-4 mt-4'>Update</button></Link>
+                  
+                        <button onClick={()=>handleTaskDelete(tasks._id)} className='btn btn-base ml-4 p-3'>Delete</button>
+                       
                     </li>)
                 }
             </ul>
