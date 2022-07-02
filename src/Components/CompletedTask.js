@@ -6,7 +6,7 @@ const CompletedTask = () => {
  
     const [tasks, setTasks] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/user')
+        fetch('https://kinder-poutine-83209.herokuapp.com/user')
             .then(res => res.json())
         .then(data=>setTasks(data))
     }, [])
@@ -16,7 +16,7 @@ const CompletedTask = () => {
        
         if (proceed) {
             console.log('deleting task', id)
-            const url = `http://localhost:5000/user/${id}`
+            const url = `https://kinder-poutine-83209.herokuapp.com/user/${id}`
             fetch(url, {
                 method: 'DELETE',
             })
@@ -40,7 +40,7 @@ const CompletedTask = () => {
                     tasks.map(tasks => <li
                         key={tasks._id}
                     >{tasks.name}
-                        <Link to={`/update/${tasks._id}`}><button className='btn ml-4 mt-4'>Update</button></Link>
+                        <Link to={`/update/${tasks._id}`}><button className='btn ml-4 mt-3'>Update</button></Link>
                   
                         <button onClick={()=>handleTaskDelete(tasks._id)} className='btn btn-base ml-4 p-3'>Delete</button>
                        

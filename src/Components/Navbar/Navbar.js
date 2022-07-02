@@ -17,10 +17,11 @@ const Navbar = () => {
     <a class="btn btn-ghost normal-case text-xl">Task-Management</a>
   </div>
   <div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal p-0">
-     <li><a href='/completeTask'>Completed Tasks</a></li>
-    <li><a href='/todo'>To-Do</a></li>
-    <li><a href='/calender'> Calendar</a></li>
+    <ul class="menu menu-horizontal p-4">
+  
+     <Link className='' to="/completeTask"> Completed Task</Link>
+     <Link className='ml-5' to="/todo">To-Do</Link>
+    <Link className='ml-5' to="/calender">Calendar</Link>
                     
     </ul>
   </div>

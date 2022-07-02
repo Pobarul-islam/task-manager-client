@@ -8,7 +8,7 @@ const Todo = () => {
 
         // send data to the server
 
-        fetch('http://localhost:5000/user', {
+        fetch('https://kinder-poutine-83209.herokuapp.com/user', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -23,13 +23,17 @@ const Todo = () => {
         })
     }
     return (
-        <div>
+        <div className='card'>
             <h1 className='text-2xl '>Please Add a new Task</h1>
             <form className='mt-5' onSubmit={handleAddTask}>
                 <input type="text" name='name' placeholder="Add Your Task" class="input input-bordered" required />
-            <input className='btn ml-2' type="submit" value={'Add Task'}/>
+                <input className='btn ml-2' type="submit" value={'Add Task'} /> <br />
+                
             </form>
+    
+            
         </div>
+        
     );
 };
 
